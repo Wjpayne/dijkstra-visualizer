@@ -17,7 +17,7 @@ export const PageTwo = (props) => {
   }
   return (
     <div>
-      {" "}
+      <>
       <Modal
         open={openTwo}
         onClose={handleCloseTwo}
@@ -31,7 +31,7 @@ export const PageTwo = (props) => {
             What is Dijkstra's algorithm?
           </Typography>
           <Typography sx={{ textAlign: "center", margin: "10px" }}>
-            At it's core, Dijksra's algorithm seeks to find the shortest path
+            At it's core, Dijkstra's algorithm seeks to find the shortest path
             between two points. This application visualizes Dijkstra's
             pathfinding algorithm and put's it into action! The algorithms for
             this application are adapted for a 2D grid, where movements from one
@@ -41,7 +41,7 @@ export const PageTwo = (props) => {
             <img src={PageTwoImage}></img>
           </div>
           <div style={{ display: "flex", justifyContent: "center", position: "relative",
-              bottom: "-5%" }}>
+              bottom: "-4.75%" }}>
             <Button
               sx={{
                 color: "black",
@@ -60,16 +60,18 @@ export const PageTwo = (props) => {
                 fontWeight: "bold",
                 borderRadius: "10px",
                 "&:hover": { backgroundColor: "transparent" },
+                
               }}
               size="large"
               disableRipple="true"
-              onClick={handleCloseTwo}
+              onClick={next}
             >
               Next
             </Button>
           </div>
         </Box>
       </Modal>
+      </>
     </div>
   );
 };

@@ -23,7 +23,7 @@ export const PageOne = (props) => {
             id="modal-pageOne"
             sx={{ textAlign: "center", fontSize: "40px", marginTop: "5px" }}
           >
-            Dijkstra Algorithm Visualizer
+            Dijkstra's Algorithm Visualizer
           </Typography>
           <div
             style={{
