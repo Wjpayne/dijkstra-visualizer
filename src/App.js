@@ -2,6 +2,8 @@
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { Tutorial } from "./Tutorial/Tutorial";
 import "./App.css"
+import { LandingPage } from "./Visualizer/LandingPage";
+import { useState } from "react";
 
 
 function App() {
@@ -13,11 +15,17 @@ function App() {
       fontFamily: font
     }
   })
+
+  const [display, setDisplay] = useState(true)
   return (
     <ThemeProvider theme = {theme}>
       <CssBaseline />
-    <div className="App" style = {{backgroundColor: "black"}}>
-      <Tutorial></Tutorial>
+    <div className="App" >
+      {display ?
+      <Tutorial setDisplay = {setDisplay}></Tutorial>
+      :
+      <LandingPage></LandingPage>
+}
     </div>
     </ThemeProvider>
   );

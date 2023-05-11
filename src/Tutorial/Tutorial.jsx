@@ -18,7 +18,10 @@ const modalStyle = {
   backgroundColor: "white",
 };
 
-export const Tutorial = () => {
+export const Tutorial = (props) => {
+
+  const {setDisplay} = props
+
   const [openOne, setOpenOne] = useState(true);
   const [openTwo, setOpenTwo] = useState(false);
   const [openThree, setOpenThree] = useState(false);
@@ -42,6 +45,7 @@ export const Tutorial = () => {
         handleCloseOne={handleCloseOne}
         handleOpenTwo={handleOpenTwo}
         modalStyle={modalStyle}
+        setDisplay={setDisplay}
       />
       <PageTwo
         openTwo={openTwo}
@@ -69,6 +73,7 @@ export const Tutorial = () => {
         handleOpenFour={handleOpenFour}
         handleCloseFive={handleCloseFive}
         modalStyle={modalStyle}
+        setDisplay={setDisplay}
       />
     </div>
   );

@@ -3,7 +3,7 @@ import { Modal } from "@mui/base";
 import { Box, Button, Typography } from "@mui/material";
 
 export const PageFive = (props) => {
-  const { openFive, handleCloseFive, modalStyle, handleOpenFour } = props;
+  const { openFive, handleCloseFive, modalStyle, handleOpenFour, setDisplay } = props;
 
   const back = () => {
     handleCloseFive();
@@ -11,6 +11,7 @@ export const PageFive = (props) => {
   };
   const finish = () => {
     handleCloseFive();
+    setDisplay(false)
   };
   return (
     <div>

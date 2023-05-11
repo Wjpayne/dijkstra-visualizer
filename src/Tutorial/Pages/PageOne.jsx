@@ -3,12 +3,17 @@ import { Modal } from "@mui/base";
 import { Box, Button, Typography } from "@mui/material";
 import { ReactComponent as PageOneImage } from "../Images/PageOneImage.svg";
 export const PageOne = (props) => {
-  const { openOne, handleCloseOne, modalStyle, handleOpenTwo } = props;
+  const { openOne, handleCloseOne, modalStyle, handleOpenTwo, setDisplay } = props;
 
   const next = () => {
     handleCloseOne();
     handleOpenTwo();
   };
+
+  const skip = () => {
+    setDisplay(false)
+  }
+  
 
   return (
     <div>
@@ -68,7 +73,7 @@ export const PageOne = (props) => {
               }}
               size="large"
               disableRipple="true"
-              onClick={handleCloseOne}
+              onClick={skip}
             >
               Skip Tutorial
             </Button>
