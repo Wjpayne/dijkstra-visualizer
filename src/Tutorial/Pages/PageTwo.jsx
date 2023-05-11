@@ -1,10 +1,20 @@
 import React from "react";
 import { Modal } from "@mui/base";
 import { Box, Button, Typography } from "@mui/material";
+import PageTwoImage from "../Images/PageTwoImage.gif";
 
 export const PageTwo = (props) => {
+  const { openTwo, handleCloseTwo, modalStyle, handleOpenThree, handleOpenOne } = props;
 
-    const {openTwo, handleCloseTwo, modalStyle} = props
+  const next = () => {
+    handleCloseTwo()
+    handleOpenThree()
+  }
+
+  const back = () => {
+    handleCloseTwo()
+    handleOpenOne()
+  }
   return (
     <div>
       {" "}
@@ -18,10 +28,48 @@ export const PageTwo = (props) => {
             id="modal-pageTwo"
             sx={{ textAlign: "center", fontSize: "40px", marginTop: "10px" }}
           >
-           Page Two
+            What is Dijkstra's algorithm?
           </Typography>
+          <Typography sx={{ textAlign: "center", margin: "10px" }}>
+            At it's core, Dijksra's algorithm seeks to find the shortest path
+            between two points. This application visualizes Dijkstra's
+            pathfinding algorithm and put's it into action! The algorithms for
+            this application are adapted for a 2D grid, where movements from one
+            node to another have a "cost" of 1.
+          </Typography>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <img src={PageTwoImage}></img>
+          </div>
+          <div style={{ display: "flex", justifyContent: "center", position: "relative",
+              bottom: "-5%" }}>
+            <Button
+              sx={{
+                color: "black",
+                fontWeight: "bold",
+                "&:hover": { backgroundColor: "transparent" },
+              }}
+              size="large"
+              disableRipple="true"
+              onClick={back}
+            >
+              Back
+            </Button>
+            <Button
+              sx={{
+                color: "black",
+                fontWeight: "bold",
+                borderRadius: "10px",
+                "&:hover": { backgroundColor: "transparent" },
+              }}
+              size="large"
+              disableRipple="true"
+              onClick={handleCloseTwo}
+            >
+              Next
+            </Button>
+          </div>
         </Box>
       </Modal>
-    </div> 
+    </div>
   );
 };

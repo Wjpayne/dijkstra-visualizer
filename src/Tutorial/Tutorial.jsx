@@ -9,7 +9,7 @@ const modalStyle = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "600px",
-  height: "400px",
+  height: "500px",
   borderRadius: "25px",
   boxShadow: 20,
   outline: "none",
@@ -37,6 +37,7 @@ export const Tutorial = () => {
       />
       <PageTwo
         openTwo={openTwo}
+        handleOpenOne = {handleOpenOne}
         handleCloseTwo={handleCloseTwo}
         handleOpenThree={handleOpenThree}
         modalStyle={modalStyle}
