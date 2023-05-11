@@ -28,6 +28,8 @@ export const PageThree = (props) => {
           open={openThree}
           onClose={handleCloseThree}
           aria-labelledby="modal-pageThree"
+          disableScrollLock
+          hideBackdrop = {true}
         >
           <Box sx={modalStyle}>
             <Typography
@@ -47,7 +49,7 @@ export const PageThree = (props) => {
                 marginTop: "70px",
               }}
             >
-              <img style={{ width: "500px" }} src={PageThreeImage}></img>
+              <img alt = "" style={{ width: "500px" }} src={PageThreeImage}></img>
             </div>
             <div
               style={{

@@ -17,6 +17,8 @@ export const PageOne = (props) => {
         onClose={handleCloseOne}
         aria-labelledby="modal-pageOne"
         sx={{ backgroundColor: "white" }}
+        disableScrollLock
+        hideBackdrop = {true}
       >
         <Box sx={modalStyle}>
           <Typography
@@ -32,7 +34,7 @@ export const PageOne = (props) => {
               top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
-              marginTop: "10px"
+              marginTop: "10px",
             }}
           >
             <PageOneImage />
@@ -42,7 +44,7 @@ export const PageOne = (props) => {
               display: "flex",
               justifyContent: "center",
               position: "relative",
-              bottom: "-73%"
+              bottom: "-73%",
             }}
           >
             <Button

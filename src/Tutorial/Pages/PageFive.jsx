@@ -2,25 +2,25 @@ import React from "react";
 import { Modal } from "@mui/base";
 import { Box, Button, Typography } from "@mui/material";
 
-
 export const PageFive = (props) => {
+  const { openFive, handleCloseFive, modalStyle, handleOpenFour } = props;
 
-    const {openFive, handleCloseFive, modalStyle, handleOpenFour} = props
-    
-    const back = () => {
-        handleCloseFive()
-        handleOpenFour()
-    }
-    const finish = () => {
-        handleCloseFive()
-    }
+  const back = () => {
+    handleCloseFive();
+    handleOpenFour();
+  };
+  const finish = () => {
+    handleCloseFive();
+  };
   return (
     <div>
       <>
         <Modal
           open={openFive}
           onClose={handleCloseFive}
-          aria-labelledby="modal-pageThree"
+          aria-labelledby="modal-pageFive"
+          disableScrollLock
+          hideBackdrop = {true}
         >
           <Box sx={modalStyle}>
             <Typography
@@ -30,10 +30,10 @@ export const PageFive = (props) => {
               Have fun!
             </Typography>
             <Typography sx={{ textAlign: "center", margin: "100px" }}>
-              Use the play button to visualize the algorithm and the reset button to clear the board.
+              Use the play button to visualize the algorithm and the reset
+              button to clear the board.
               <br></br>
               <br></br>
-              
               If you want to access this tutorial again, click on the tutorial
               icon in the top left corner of your screen. If you want to see the
               source code for this application, check out the github here{" "}
@@ -44,9 +44,7 @@ export const PageFive = (props) => {
                 justifyContent: "center",
                 marginTop: "70px",
               }}
-            >
-              
-            </div>
+            ></div>
             <div
               style={{
                 display: "flex",
@@ -80,7 +78,6 @@ export const PageFive = (props) => {
               >
                 Finish
               </Button>
-              
             </div>
           </Box>
         </Modal>

@@ -23,7 +23,7 @@ export const Tutorial = () => {
   const [openTwo, setOpenTwo] = useState(false);
   const [openThree, setOpenThree] = useState(false);
   const [openFour, setOpenFour] = useState(false);
-  const [openFive, setOpenFive] = useState(false)
+  const [openFive, setOpenFive] = useState(false);
   const handleOpenOne = () => setOpenOne(true);
   const handleCloseOne = () => setOpenOne(false);
   const handleOpenTwo = () => setOpenTwo(true);
@@ -32,8 +32,8 @@ export const Tutorial = () => {
   const handleCloseThree = () => setOpenThree(false);
   const handleOpenFour = () => setOpenFour(true);
   const handleCloseFour = () => setOpenFour(false);
-  const handleOpenFive = () => setOpenFive(true)
-  const handleCloseFive = () => setOpenFive(false)
+  const handleOpenFive = () => setOpenFive(true);
+  const handleCloseFive = () => setOpenFive(false);
 
   return (
     <div>
@@ -58,17 +58,17 @@ export const Tutorial = () => {
         modalStyle={modalStyle}
       />
       <PageFour
-      openFour = {openFour}
-      handleOpenThree = {handleOpenThree}
-      handleCloseFour = {handleCloseFour}
-      handleOpenFive = {handleOpenFive}
-      modalStyle={modalStyle}
+        openFour={openFour}
+        handleOpenThree={handleOpenThree}
+        handleCloseFour={handleCloseFour}
+        handleOpenFive={handleOpenFive}
+        modalStyle={modalStyle}
       />
       <PageFive
-      openFive = {openFive}
-      handleOpenFour = {handleOpenFour}
-      handleCloseFive = {handleCloseFive}
-      modalStyle={modalStyle}
+        openFive={openFive}
+        handleOpenFour={handleOpenFour}
+        handleCloseFive={handleCloseFive}
+        modalStyle={modalStyle}
       />
     </div>
   );

@@ -27,11 +27,13 @@ export const PageFour = (props) => {
         <Modal
           open={openFour}
           onClose={handleCloseFour}
-          aria-labelledby="modal-pageThree"
+          aria-labelledby="modal-pageFour"
+          disableScrollLock
+          hideBackdrop = {true}
         >
           <Box sx={modalStyle}>
             <Typography
-              id="modal-pageThree"
+              id="modal-pageFour"
               sx={{ textAlign: "center", fontSize: "40px", marginTop: "10px" }}
             >
               How it works continued
@@ -47,7 +49,7 @@ export const PageFour = (props) => {
                 marginTop: "70px",
               }}
             >
-              <img style={{ width: "500px" }} src={PageFourImage}></img>
+              <img alt = "" style={{ width: "500px" }} src={PageFourImage}></img>
             </div>
             <div
               style={{
