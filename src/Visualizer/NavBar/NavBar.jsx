@@ -1,9 +1,13 @@
 import { PlayCircle } from "@mui/icons-material";
-import ReplayIcon from '@mui/icons-material/Replay';
+import ReplayIcon from "@mui/icons-material/Replay";
 import { AppBar, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
+import "./NavBar.css";
+import { useParams } from "../Context/CreateContext";
 
 export const NavBar = () => {
+
+  const {setres, setrun} = useParams()
   return (
     <div>
       <AppBar sx={{ height: "100px" }}>
@@ -26,6 +30,7 @@ export const NavBar = () => {
                   "&:hover": { backgroundColor: "transparent" },
                   color: "white",
                 }}
+                onClick = {() => {setres((old) => {return !old})}}
               >
                 <PlayCircle fontSize="large" />
               </IconButton>
@@ -37,11 +42,32 @@ export const NavBar = () => {
                   "&:hover": { backgroundColor: "transparent" },
                   color: "white",
                 }}
+                onClick = {() => {setrun((old) => {return !old})}}
               >
                 <ReplayIcon fontSize="large" />
               </IconButton>
             </Grid>
             <Grid item>Reset</Grid>
+            <Grid item>
+              <div className="legend-start"></div>
+            </Grid>
+            <Grid item>Starting Node</Grid>
+            <Grid item>
+              <div className="legend-end"></div>
+            </Grid>
+            <Grid item>Ending Node</Grid>
+            <Grid item>
+              <div className="legend-wall"></div>
+            </Grid>
+            <Grid item>Wall</Grid>
+            <Grid item>
+              <div className="legend-visited"></div>
+            </Grid>
+            <Grid item>Visited</Grid>
+            <Grid item>
+              <div className="legend-shortestpath"></div>
+            </Grid>
+            <Grid item>Shortest Path</Grid>
           </Grid>
         </>
       </AppBar>

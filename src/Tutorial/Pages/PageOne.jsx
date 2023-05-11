@@ -59,7 +59,7 @@ export const PageOne = (props) => {
                 "&:hover": { backgroundColor: "transparent" },
               }}
               size="large"
-              disableRipple="true"
+              disableRipple
               onClick={next}
             >
               Start Tutorial
@@ -72,7 +72,7 @@ export const PageOne = (props) => {
                 "&:hover": { backgroundColor: "transparent" },
               }}
               size="large"
-              disableRipple="true"
+              disableRipple 
               onClick={skip}
             >
               Skip Tutorial

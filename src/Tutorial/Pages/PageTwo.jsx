@@ -63,7 +63,7 @@ export const PageTwo = (props) => {
                   "&:hover": { backgroundColor: "transparent" },
                 }}
                 size="large"
-                disableRipple="true"
+                disableRipple
                 onClick={back}
               >
                 Back
@@ -76,7 +76,7 @@ export const PageTwo = (props) => {
                   "&:hover": { backgroundColor: "transparent" },
                 }}
                 size="large"
-                disableRipple="true"
+                disableRipple
                 onClick={next}
               >
                 Next

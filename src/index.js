@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ParamsProvider } from './Visualizer/Context/CreateContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ParamsProvider>
     <App />
+    </ParamsProvider>
   </React.StrictMode>
 );
 

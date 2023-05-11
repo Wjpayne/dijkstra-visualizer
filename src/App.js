@@ -3,8 +3,11 @@ import { Tutorial } from "./Tutorial/Tutorial";
 import "./App.css";
 import { LandingPage } from "./Visualizer/LandingPage";
 import { useState } from "react";
+import { useParams } from "./Visualizer/Context/CreateContext";
 
 function App() {
+  console.log(useParams());
+
   const font = "'Ubuntu', sans-serif";
 
   const theme = createTheme({
