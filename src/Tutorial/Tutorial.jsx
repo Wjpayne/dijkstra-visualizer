@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
-import { PageOne } from "./PageOne";
-import { PageTwo } from "./PageTwo";
+import { PageOne } from "./Pages/PageOne";
+import { PageTwo } from "./Pages/PageTwo";
 
 const modalStyle = {
   position: "absolute",
@@ -13,6 +13,7 @@ const modalStyle = {
   borderRadius: "25px",
   boxShadow: 20,
   outline: "none",
+  backgroundColor: "white"
 };
 
 export const Tutorial = () => {

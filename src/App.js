@@ -1,10 +1,9 @@
 
-import './App.css';
-import { Tutorial } from './Tutorial/Tutorial';
+import { Tutorial } from "./Tutorial/Tutorial";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style = {{backgroundColor: "black"}}>
       <Tutorial></Tutorial>
     </div>
   );
