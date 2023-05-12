@@ -8,8 +8,8 @@ export const useParams = () => {
 };
 
 export const ParamsProvider = ({ children }) => {
-  const [mode, setmode] = useState(null);
-  const [algo, setalgo] = useState("");
+  const [mode, setmode] = useState("setstart");
+  const [algo, setalgo] = useState("BFS");
   const [run, setrun] = useState(false);
   const [grid, setgrid] = useState(GetGrid(50, 25));
   const [editing, seteditFlag] = useState(false);

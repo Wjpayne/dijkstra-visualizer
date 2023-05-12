@@ -1,0 +1,37 @@
+
+
+.board {
+    display: inline-grid;
+    margin: 0 0 0 0;
+    gap: 0px;
+    grid-template-columns: repeat(50, 27px);
+    grid-template-rows: repeat(25, 27px);
+}
+
+.board .cell {
+  width: 24px;
+  height: 24px;
+  border: 1px solid black;
+  border: 1px solid white;
+  background-color: rgb(175, 216, 248);
+}
+
+.wall {
+  background: black !important;
+}
+
+.visited {
+  background: rgba(0, 190, 218, 0.75) !important;
+  transition: all 8ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.path {
+  background:  rgb(255, 243, 20) !important ;
+  transition: all 8ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.start {
+    background-color: rgb(126, 63, 189) !important;
+
+
+}

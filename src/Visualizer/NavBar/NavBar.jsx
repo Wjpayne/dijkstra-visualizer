@@ -10,7 +10,7 @@ export const NavBar = () => {
   const {setres, setrun} = useParams()
   return (
     <div>
-      <AppBar sx={{ height: "100px" }}>
+      <AppBar sx={{ height: "100px", }}>
         <Typography
           sx={{ display: "flex", justifyContent: "center", fontSize: "30px" }}
         >
@@ -30,7 +30,7 @@ export const NavBar = () => {
                   "&:hover": { backgroundColor: "transparent" },
                   color: "white",
                 }}
-                onClick = {() => {setres((old) => {return !old})}}
+                onClick = {() => {setrun((old) => {return !old})}}
               >
                 <PlayCircle fontSize="large" />
               </IconButton>
@@ -42,7 +42,7 @@ export const NavBar = () => {
                   "&:hover": { backgroundColor: "transparent" },
                   color: "white",
                 }}
-                onClick = {() => {setrun((old) => {return !old})}}
+                onClick = {() => {setres((old) => {return !old})}}
               >
                 <ReplayIcon fontSize="large" />
               </IconButton>
