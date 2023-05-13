@@ -3,11 +3,10 @@ import { Tutorial } from "./Tutorial/Tutorial";
 import "./App.css";
 import { LandingPage } from "./Visualizer/LandingPage";
 import { useState } from "react";
-import { useParams } from "./Visualizer/Context/CreateContext";
+import { Provider } from "react-redux";
+import store from "./Visualizer/Store";
 
 function App() {
-  console.log(useParams());
-
   const font = "'Ubuntu', sans-serif";
 
   const theme = createTheme({
@@ -18,16 +17,18 @@ function App() {
 
   const [display, setDisplay] = useState(true);
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <div className="App">
-        {display ? (
-          <Tutorial setDisplay={setDisplay}></Tutorial>
-        ) : (
-          <LandingPage></LandingPage>
-        )}
-      </div>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className="App">
+          {display ? (
+            <Tutorial setDisplay={setDisplay}></Tutorial>
+          ) : (
+            <LandingPage></LandingPage>
+          )}
+        </div>
+      </ThemeProvider>
+    </Provider>
   );
 }
 

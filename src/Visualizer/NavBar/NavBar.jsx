@@ -3,14 +3,11 @@ import ReplayIcon from "@mui/icons-material/Replay";
 import { AppBar, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
 import "./NavBar.css";
-import { useParams } from "../Context/CreateContext";
 
 export const NavBar = () => {
-
-  const {setres, setrun} = useParams()
   return (
     <div>
-      <AppBar sx={{ height: "100px", }}>
+      <AppBar sx={{ height: "100px" }}>
         <Typography
           sx={{ display: "flex", justifyContent: "center", fontSize: "30px" }}
         >
@@ -30,7 +27,6 @@ export const NavBar = () => {
                   "&:hover": { backgroundColor: "transparent" },
                   color: "white",
                 }}
-                onClick = {() => {setrun((old) => {return !old})}}
               >
                 <PlayCircle fontSize="large" />
               </IconButton>
@@ -42,7 +38,6 @@ export const NavBar = () => {
                   "&:hover": { backgroundColor: "transparent" },
                   color: "white",
                 }}
-                onClick = {() => {setres((old) => {return !old})}}
               >
                 <ReplayIcon fontSize="large" />
               </IconButton>
