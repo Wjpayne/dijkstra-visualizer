@@ -1,1 +1,8 @@
-
+.node-container {
+    display: inline-grid;
+    margin: 0 0 0 0;
+    border: 1px solid rgba(128, 128, 128, 0.356);
+    grid-gap: 0px;
+    grid-template-columns: repeat(50, 27px);
+    grid-template-rows: repeat(20, 27px);
+  }
