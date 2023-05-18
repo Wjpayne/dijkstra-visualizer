@@ -1,13 +1,13 @@
 import "./Board.css";
-import React from "react";
-import store from "../Store";
+import React, { useRef } from "react";
+import store from "../Store/index";
 
 export const Board = (props) => {
   const { row, col, makeOtherNodeRender } = props;
 
-  const storeGetState = store.getState();
+  const nodeRef = useRef
 
-  const [boardState, setBoardState] = useState({});
+  const storeGetState = store.getState();
 
   const handleMouseDown = () => {
     if (storeGetState.nodes[row][col].isStart) {
@@ -19,10 +19,9 @@ export const Board = (props) => {
     } else {
       if (storeGetState.mouseIsClicked) return;
       mouseClickTrue();
-      updateToggleWall(row, col);
+      updateToggledWall(row, col);
     }
     if (!storeGetState.visitingAnimation) {
-      setBoardState({});
     }
   };
 
@@ -56,16 +55,15 @@ export const Board = (props) => {
       if (storeGetState.dragStopPoint) {
         updateStopNode(row, col);
         deleteNode(prevRow, prevCol);
-        setBoardState({});
+
         makeOtherNodeRender(prevRow, prevCol);
       } else if (storeGetState.dragStartPoint) {
         updateStartNode(row, col);
         deleteNode(prevRow, prevCol);
-        setBoardState({});
+
         makeOtherNodeRender(prevRow, prevCol);
       } else if (storeGetState.mouseIsClicked) {
-        updateToggleWall(row, col);
-        setBoardState({});
+        updateToggledWall(row, col);
       }
     }
   };
@@ -103,12 +101,10 @@ export const Board = (props) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onDragStart={(e) => {
-          e.preventDefault;
-          e.stopPropagation;
+          e.preventDefault();
+          e.stopPropagation();
         }}
-      >
-        Board
-      </div>
+      ></div>
     );
   } else if (storeGetState.visitingAnimation) {
     return <div id={`node-${col}-${row}`} className="node-visited"></div>;

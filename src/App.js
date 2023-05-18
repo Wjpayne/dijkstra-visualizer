@@ -4,7 +4,7 @@ import "./App.css";
 import { LandingPage } from "./Visualizer/LandingPage";
 import { useState } from "react";
 import { Provider } from "react-redux";
-import store from "./Visualizer/Store/Index.js";
+import store from "./Visualizer/Store/index.js";
 
 function App() {
   const font = "'Ubuntu', sans-serif";

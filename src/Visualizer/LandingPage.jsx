@@ -1,5 +1,6 @@
 import React from "react";
 import { NavBar } from "./NavBar/NavBar";
+import { Visualizer } from "./Visualizer";
 
 export const LandingPage = () => {
   return (
@@ -12,7 +13,9 @@ export const LandingPage = () => {
           alignItems: "center",
           marginTop: "110px",
         }}
-      ></div>
+      >
+        <Visualizer></Visualizer>
+      </div>
     </div>
   );
 };
