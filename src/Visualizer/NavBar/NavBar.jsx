@@ -5,7 +5,7 @@ import React from "react";
 import "./NavBar.css";
 
 export const NavBar = (props) => {
-  const { visualizeDijkstra } = props;
+  const { visualizeDijkstra, resetGrid } = props;
   return (
     <div>
       <AppBar sx={{ height: "100px" }}>
@@ -28,7 +28,6 @@ export const NavBar = (props) => {
                   "&:hover": { backgroundColor: "transparent" },
                   color: "white",
                 }}
-
                 onClick={() => visualizeDijkstra()}
               >
                 <PlayCircle fontSize="large" />
@@ -41,7 +40,8 @@ export const NavBar = (props) => {
                   "&:hover": { backgroundColor: "transparent" },
                   color: "white",
                 }}
-                
+
+                onClick={()=> resetGrid()}
               >
                 <ReplayIcon fontSize="large" />
               </IconButton>

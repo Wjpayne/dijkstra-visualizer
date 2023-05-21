@@ -15,14 +15,14 @@ import { dijkstra, getNodesInShortestPathOrder } from "../Algorithm/Dijkstra";
 export const Pathfinder = () => {
   const [grid, setGrid] = useState([]);
   const [mouseIsPressed, setMouseIsPressed] = useState(false);
-  
 
   //set initial grid
 
   useEffect(() => {
     const getGrid = getInitialGrid();
     setGrid(getGrid);
-  }, []);
+  }, [setGrid]);
+
 
   //handler functions for mouse
 
@@ -58,9 +58,9 @@ export const Pathfinder = () => {
           "node node-visited";
       }, 10 * i);
     }
-  }
+  };
 
-const  animateShortestPath = (nodesInShortestPathOrder) => {
+  const animateShortestPath = (nodesInShortestPathOrder) => {
     for (let i = 0; i < nodesInShortestPathOrder.length; i++) {
       setTimeout(() => {
         const node = nodesInShortestPathOrder[i];
@@ -68,7 +68,7 @@ const  animateShortestPath = (nodesInShortestPathOrder) => {
           "node node-shortest-path";
       }, 50 * i);
     }
-  }
+  };
 
   const visualizeDijkstra = () => {
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
@@ -76,14 +76,24 @@ const  animateShortestPath = (nodesInShortestPathOrder) => {
     const visitedNodesInOrder = dijkstra(grid, startNode, finishNode);
     const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
     animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
-  }
+  };
 
-  //reset grid
+  //reset animation and grid
+
+  const resetGrid = () => {
+    const getGrid = getInitialGrid();
+    setGrid(getGrid)
+  };
+
+
 
   return (
     <>
       <div>
-        <NavBar visualizeDijkstra={visualizeDijkstra} ></NavBar>
+        <NavBar
+          visualizeDijkstra={visualizeDijkstra}
+          resetGrid={resetGrid}
+        ></NavBar>
         <NodeContainer>
           {grid.map((row, rowIndex) => {
             return (

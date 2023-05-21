@@ -1,7 +1,7 @@
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import "./App.css";
 import { useState } from "react";
-import {Tutorial} from "./Tutorial/Tutorial"
+import { Tutorial } from "./Tutorial/Tutorial";
 
 import { Pathfinder } from "./Visualizer/Pathfinder/Pathfinder";
 
@@ -19,7 +19,6 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className="App">
-        
         <div
           style={{
             display: "flex",
@@ -28,7 +27,11 @@ function App() {
             marginTop: "120px",
           }}
         >
-          {display ? <Tutorial setDisplay = {setDisplay} ></Tutorial> : <Pathfinder></Pathfinder>}
+          {display ? (
+            <Tutorial setDisplay={setDisplay}></Tutorial>
+          ) : (
+            <Pathfinder></Pathfinder>
+          )}
         </div>
       </div>
     </ThemeProvider>

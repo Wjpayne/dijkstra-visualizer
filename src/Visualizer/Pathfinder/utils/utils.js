@@ -1,7 +1,12 @@
+//grid starting points
+
+
 export const START_NODE_ROW = 10;
 export const START_NODE_COL = 10;
 export const FINISH_NODE_ROW = 10;
 export const FINISH_NODE_COL = 40;
+
+//get grid functions
 
 export const getInitialGrid = () => {
   const grid = [];
