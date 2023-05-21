@@ -4,7 +4,8 @@ import { AppBar, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
 import "./NavBar.css";
 
-export const NavBar = () => {
+export const NavBar = (props) => {
+  const { visualizeDijkstra } = props;
   return (
     <div>
       <AppBar sx={{ height: "100px" }}>
@@ -27,6 +28,8 @@ export const NavBar = () => {
                   "&:hover": { backgroundColor: "transparent" },
                   color: "white",
                 }}
+
+                onClick={() => visualizeDijkstra()}
               >
                 <PlayCircle fontSize="large" />
               </IconButton>
@@ -38,6 +41,7 @@ export const NavBar = () => {
                   "&:hover": { backgroundColor: "transparent" },
                   color: "white",
                 }}
+                
               >
                 <ReplayIcon fontSize="large" />
               </IconButton>
