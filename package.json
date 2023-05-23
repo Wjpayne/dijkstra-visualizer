@@ -1,7 +1,7 @@
 {
   "name": "dijkstra-visualizer",
   "version": "1.0.0",
-  "engines": {"node": "16.7.x"},
+  "engines": {"node": "18.x"},
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.0",
