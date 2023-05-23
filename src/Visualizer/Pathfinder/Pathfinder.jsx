@@ -4,7 +4,6 @@ import NodeContainer from "../Board/NodeContainer";
 import { NavBar } from "../NavBar/NavBar";
 import { dijkstra, getNodesInShortestPathOrder } from "../Algorithm/Dijkstra";
 
-
 export const Pathfinder = () => {
   const [grid, setGrid] = useState([]);
   const [mouseIsPressed, setMouseIsPressed] = useState(false);
@@ -18,7 +17,6 @@ export const Pathfinder = () => {
   const [finishNodeRow, setFinishNodeRow] = useState(10);
   const [currRow, setCurrRow] = useState(0);
   const [currCol, setCurrCol] = useState(0);
-  const [error, setError] = useState(false);
 
   //set initial grid
 
@@ -50,6 +48,7 @@ export const Pathfinder = () => {
   const getNewGridWithWallToggled = (grid, row, col) => {
     const newGrid = grid.slice();
     const node = newGrid[row][col];
+
     const newNode = {
       ...node,
       isWall: !node.isWall,
@@ -86,7 +85,6 @@ export const Pathfinder = () => {
         setCurrRow(row);
       } else {
         const newGrid = getNewGridWithWallToggled(grid, row, col);
-
         setGrid(newGrid);
         setMouseIsPressed(true);
         setIsWall(true);
@@ -111,7 +109,10 @@ export const Pathfinder = () => {
         `node-${row}-${col}`
       ).className;
       if (isStartNode) {
-        if (nodeClassName !== "node node-wall") {
+        if (
+          nodeClassName !== "node node-wall" &&
+          nodeClassName !== "node node-finish"
+        ) {
           const prevStartNode = grid[currRow][currCol];
           prevStartNode.isStart = false;
           document.getElementById(`node-${currRow}-${currCol}`).className =
@@ -126,7 +127,10 @@ export const Pathfinder = () => {
         setStartNodeCol(col);
         setStartNodeRow(row);
       } else if (isFinishNode) {
-        if (nodeClassName !== "node node-wall") {
+        if (
+          nodeClassName !== "node node-wall" &&
+          nodeClassName !== "node node-start"
+        ) {
           const prevFinishNode = grid[currRow][currCol];
           prevFinishNode.isFinish = false;
           document.getElementById(`node-${currRow}-${currCol}`).className =
