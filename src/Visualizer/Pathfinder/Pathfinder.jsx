@@ -3,7 +3,7 @@ import { Board } from "../Board/Board";
 import NodeContainer from "../Board/NodeContainer";
 import { NavBar } from "../NavBar/NavBar";
 import { dijkstra, getNodesInShortestPathOrder } from "../Algorithm/Dijkstra";
-import No from "./No.gif";
+
 
 export const Pathfinder = () => {
   const [grid, setGrid] = useState([]);
