@@ -1,46 +1,47 @@
 .legend-start {
-  border: 1px solid white;
-  margin: 10px;
-  height: 24px;
-  width: 24px;
-  display: inline-block;
-  background-color: rgb(126, 63, 189);
-}
-
-.legend-end {
     border: 1px solid white;
     margin: 10px;
     height: 24px;
     width: 24px;
     display: inline-block;
-    background-color: rgba(223, 65, 65, 0.78);
+    background-color: rgb(126, 63, 189);
   }
-
-  .legend-wall {
-    border: 1px solid white;
-    margin: 10px;
-    height: 24px;
-    width: 24px;
-    display: inline-block;
-    background-color: rgba(16, 21, 95, 0.781);
-  }
-
-  .legend-visited {
-    border: 1px solid white;
-    margin: 10px;
-    height: 24px;
-    width: 24px;
-    display: inline-block;
-    background-color: rgba(0, 190, 218, 0.75);
-    
-  }
-
-  .legend-shortestpath {
-    border: 1px solid white;
-    margin: 10px;
-    height: 24px;
-    width: 24px;
-    display: inline-block;
-    background-color: rgb(255, 243, 20);
-    
-  }
+  
+  .legend-end {
+      border: 1px solid white;
+      margin: 10px;
+      height: 24px;
+      width: 24px;
+      display: inline-block;
+      background-color: rgba(223, 65, 65, 0.78);
+    }
+  
+    .legend-wall {
+      border: 1px solid white;
+      margin: 10px;
+      height: 24px;
+      width: 24px;
+      display: inline-block;
+      background-color: rgba(16, 21, 95, 0.781);
+    }
+  
+    .legend-visited {
+      border: 1px solid white;
+      margin: 10px;
+      height: 24px;
+      width: 24px;
+      display: inline-block;
+      background-color: rgba(0, 190, 218, 0.75);
+      
+    }
+  
+    .legend-shortestpath {
+      border: 1px solid white;
+      margin: 10px;
+      height: 24px;
+      width: 24px;
+      display: inline-block;
+      background-color: rgb(255, 243, 20);
+      
+    }
+  
