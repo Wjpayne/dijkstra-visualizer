@@ -2,7 +2,6 @@ import { PlayCircle } from "@mui/icons-material";
 import ReplayIcon from "@mui/icons-material/Replay";
 import { AppBar, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
-import "./navbar.css";
 
 
 export const NavBar = (props) => {
@@ -41,31 +40,75 @@ export const NavBar = (props) => {
                   "&:hover": { backgroundColor: "transparent" },
                   color: "white",
                 }}
-
-                onClick={()=> resetGrid()}
+                onClick={() => resetGrid()}
               >
                 <ReplayIcon fontSize="large" />
               </IconButton>
             </Grid>
             <Grid item>Reset</Grid>
             <Grid item>
-              <div className="legend-start"></div>
+              <div
+                style={{
+                  border: "1px solid white",
+                  margin: "10px",
+                  heigh: "24px",
+                  width: "24px",
+                  display: "inline-block",
+                  backgroundColor: "rgb(126, 63, 189)",
+                }}
+              ></div>
             </Grid>
             <Grid item>Starting Node</Grid>
             <Grid item>
-              <div className="legend-end"></div>
+              <div
+                style={{
+                  border: "1px solid white",
+                  margin: "10px",
+                  heigh: "24px",
+                  width: "24px",
+                  display: "inline-block",
+                  backgroundColor: "rgba(223, 65, 65, 0.78",
+                }}
+              ></div>
             </Grid>
             <Grid item>Ending Node</Grid>
             <Grid item>
-              <div className="legend-wall"></div>
+              <div
+                style={{
+                  border: "1px solid white",
+                  margin: "10px",
+                  heigh: "24px",
+                  width: "24px",
+                  display: "inline-block",
+                  backgroundColor: "rgba(16, 21, 95, 0.781)",
+                }}
+              ></div>
             </Grid>
             <Grid item>Wall</Grid>
             <Grid item>
-              <div className="legend-visited"></div>
+              <div
+                style={{
+                  border: "1px solid white",
+                  margin: "10px",
+                  heigh: "24px",
+                  width: "24px",
+                  display: "inline-block",
+                  backgroundColor: " rgba(0, 190, 218, 0.75)",
+                }}
+              ></div>
             </Grid>
             <Grid item>Visited</Grid>
             <Grid item>
-              <div className="legend-shortestpath"></div>
+              <div
+                style={{
+                  border: "1px solid white",
+                  margin: "10px",
+                  heigh: "24px",
+                  width: "24px",
+                  display: "inline-block",
+                  backgroundColor: "  rgb(255, 243, 20)",
+                }}
+              ></div>
             </Grid>
             <Grid item>Shortest Path</Grid>
           </Grid>
