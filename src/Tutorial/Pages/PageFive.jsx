@@ -1,9 +1,11 @@
 import React from "react";
 import { Modal } from "@mui/base";
 import { Box, Button, Typography } from "@mui/material";
+import { PlayCircle } from "@mui/icons-material";
 
 export const PageFive = (props) => {
-  const { openFive, handleCloseFive, modalStyle, handleOpenFour, setDisplay } = props;
+  const { openFive, handleCloseFive, modalStyle, handleOpenFour, setDisplay } =
+    props;
 
   const back = () => {
     handleCloseFive();
@@ -11,7 +13,7 @@ export const PageFive = (props) => {
   };
   const finish = () => {
     handleCloseFive();
-    setDisplay(false)
+    setDisplay(false);
   };
   return (
     <div>
@@ -21,7 +23,7 @@ export const PageFive = (props) => {
           onClose={handleCloseFive}
           aria-labelledby="modal-pageFive"
           disableScrollLock
-          hideBackdrop = {true}
+          hideBackdrop={true}
         >
           <Box sx={modalStyle}>
             <Typography
@@ -31,7 +33,7 @@ export const PageFive = (props) => {
               Have fun!
             </Typography>
             <Typography sx={{ textAlign: "center", margin: "100px" }}>
-              Use the play button to visualize the algorithm and the reset
+              Use the visualize button to visualize the algorithm and the reset
               button to clear the board.
               <br></br>
               <br></br>

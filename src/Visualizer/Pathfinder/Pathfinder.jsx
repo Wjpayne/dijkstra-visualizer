@@ -164,7 +164,8 @@ export const Pathfinder = () => {
 
         if (
           nodeClassName !== "node node-start" &&
-          nodeClassName !== "node node-finish"
+          nodeClassName !== "node node-finish" &&
+          nodeClassName !== "node node-wall"
         ) {
           document.getElementById(`node-${node.row}-${node.col}`).className =
             "node node-visited";
@@ -206,6 +207,7 @@ export const Pathfinder = () => {
   const resetGrid = () => {
     if (run) {
       const newGrid = grid.slice();
+
       for (const row of newGrid) {
         for (const node of row) {
           let nodeClassName = document.getElementById(
@@ -220,13 +222,13 @@ export const Pathfinder = () => {
               "node";
           }
           if (nodeClassName === "node node-start") {
-            node.isStartNode = true;
           }
         }
       }
     }
     const getGrid = getInitialGrid();
     setGrid(getGrid);
+    setRun(false);
   };
 
   return (
