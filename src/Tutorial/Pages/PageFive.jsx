@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal } from "@mui/base";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Link, Typography } from "@mui/material";
 import { PlayCircle } from "@mui/icons-material";
 
 export const PageFive = (props) => {
@@ -39,7 +39,7 @@ export const PageFive = (props) => {
               <br></br>
               If you want to access this tutorial again, click on the tutorial
               icon in the top left corner of your screen. If you want to see the
-              source code for this application, check out the github here{" "}
+              source code for this application, check out the github <Link underline = "none" sx = {{color: "black", fontWeight: "bold"}} href = "https://github.com/Wjpayne/dijkstra-visualizer">here</Link>
             </Typography>
             <div
               style={{
