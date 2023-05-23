@@ -51,7 +51,7 @@ export const NavBar = (props) => {
                 style={{
                   border: "1px solid white",
                   margin: "10px",
-                  heigh: "24px",
+                  height: "24px",
                   width: "24px",
                   display: "inline-block",
                   backgroundColor: "rgb(126, 63, 189)",
@@ -64,7 +64,7 @@ export const NavBar = (props) => {
                 style={{
                   border: "1px solid white",
                   margin: "10px",
-                  heigh: "24px",
+                  height: "24px",
                   width: "24px",
                   display: "inline-block",
                   backgroundColor: "rgba(223, 65, 65, 0.78",
@@ -77,7 +77,7 @@ export const NavBar = (props) => {
                 style={{
                   border: "1px solid white",
                   margin: "10px",
-                  heigh: "24px",
+                  height: "24px",
                   width: "24px",
                   display: "inline-block",
                   backgroundColor: "rgba(16, 21, 95, 0.781)",
@@ -90,7 +90,7 @@ export const NavBar = (props) => {
                 style={{
                   border: "1px solid white",
                   margin: "10px",
-                  heigh: "24px",
+                  height: "24px",
                   width: "24px",
                   display: "inline-block",
                   backgroundColor: " rgba(0, 190, 218, 0.75)",
@@ -103,7 +103,7 @@ export const NavBar = (props) => {
                 style={{
                   border: "1px solid white",
                   margin: "10px",
-                  heigh: "24px",
+                  height: "24px",
                   width: "24px",
                   display: "inline-block",
                   backgroundColor: "  rgb(255, 243, 20)",
