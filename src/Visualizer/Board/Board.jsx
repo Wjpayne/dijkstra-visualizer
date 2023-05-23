@@ -1,5 +1,5 @@
 import React from "react";
-import "./Board.css";
+import "./board.css";
 
 export const Board = (props) => {
   const {
