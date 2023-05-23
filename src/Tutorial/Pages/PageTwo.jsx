@@ -41,7 +41,7 @@ export const PageTwo = (props) => {
             <Typography sx={{ textAlign: "center", margin: "10px" }}>
               At it's core, Dijkstra's algorithm seeks to find the shortest path
               between two points. This application visualizes Dijkstra's
-              pathfinding algorithm and put's it into action! The algorithms for
+              pathfinding algorithm and puts it into action! The algorithms for
               this application are adapted for a 2D grid, where movements from
               one node to another have a "cost" of 1.
             </Typography>
