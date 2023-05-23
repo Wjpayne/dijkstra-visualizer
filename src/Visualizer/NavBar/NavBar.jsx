@@ -2,6 +2,7 @@ import { PlayCircle } from "@mui/icons-material";
 import ReplayIcon from "@mui/icons-material/Replay";
 import { AppBar, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
+import "./nabar.css"
 
 
 export const NavBar = (props) => {
