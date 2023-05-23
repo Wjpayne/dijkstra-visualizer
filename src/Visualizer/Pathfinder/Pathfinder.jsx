@@ -3,6 +3,7 @@ import { Board } from "../Board/Board";
 import NodeContainer from "../Board/NodeContainer";
 import { NavBar } from "../NavBar/NavBar";
 import { dijkstra, getNodesInShortestPathOrder } from "../Algorithm/Dijkstra";
+import No from "./No.gif";
 
 export const Pathfinder = () => {
   const [grid, setGrid] = useState([]);
@@ -17,6 +18,7 @@ export const Pathfinder = () => {
   const [finishNodeRow, setFinishNodeRow] = useState(10);
   const [currRow, setCurrRow] = useState(0);
   const [currCol, setCurrCol] = useState(0);
+  const [error, setError] = useState(false);
 
   //set initial grid
 
@@ -55,8 +57,6 @@ export const Pathfinder = () => {
     newGrid[row][col] = newNode;
     return newGrid;
   };
-
-
 
   useEffect(() => {
     const getGrid = getInitialGrid();
@@ -152,6 +152,7 @@ export const Pathfinder = () => {
 
   const animateDijkstra = (visitedNodesInOrder, nodesInShortestPathOrder) => {
     setRun(true);
+
     for (let i = 0; i <= visitedNodesInOrder.length; i++) {
       if (i === visitedNodesInOrder.length) {
         setTimeout(() => {
@@ -244,7 +245,7 @@ export const Pathfinder = () => {
         <NodeContainer>
           {grid.map((row, rowIndex) => {
             return (
-              <>
+              <React.Fragment key={rowIndex}>
                 {row.map((node, nodeIndex) => {
                   const { row, col, isFinish, isStart, isWall } = node;
                   return (
@@ -262,7 +263,7 @@ export const Pathfinder = () => {
                     ></Board>
                   );
                 })}
-              </>
+              </React.Fragment>
             );
           })}
         </NodeContainer>
