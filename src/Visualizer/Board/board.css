@@ -55,6 +55,7 @@
 
 .node-wall {
   background-color: rgba(16, 21, 95, 0.781);
+  border: none
 }
 
 .node-shortest-path {
