@@ -56,9 +56,12 @@ export const Pathfinder = () => {
     return newGrid;
   };
 
+
+
   useEffect(() => {
     const getGrid = getInitialGrid();
     setGrid(getGrid);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [setGrid]);
 
   //handler functions for mouse
