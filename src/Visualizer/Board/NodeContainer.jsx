@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Board.css";
+import "./board.css";
 
 export default class NodeContainer extends Component {
   constructor(props) {
