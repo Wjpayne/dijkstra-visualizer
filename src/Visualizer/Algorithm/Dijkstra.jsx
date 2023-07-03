@@ -1,4 +1,6 @@
-export function dijkstra(grid, startNode, finishNode) {
+//setup function for shortest path, put nodes in an array. Set startNode and finishNode, and unvisitedNode, and walls.
+
+export const dijkstra = (grid, startNode, finishNode) => {
   const visitedNodesInOrder = [];
   startNode.distance = 0;
   const unvisitedNodes = getAllNodes(grid);
@@ -12,31 +14,35 @@ export function dijkstra(grid, startNode, finishNode) {
     if (closestNode === finishNode) return visitedNodesInOrder;
     updateUnvisitedNeighbors(closestNode, grid);
   }
-}
+};
 
-function sortNodesByDistance(unvisitedNodes) {
+// sory by dinstance
+const sortNodesByDistance = (unvisitedNodes) => {
   unvisitedNodes.sort((nodeA, nodeB) => nodeA.distance - nodeB.distance);
-}
+};
 
-function updateUnvisitedNeighbors(node, grid) {
+//for each neighbor thats not visited, iterate over nodes
+const updateUnvisitedNeighbors = (node, grid) => {
   const unvisitedNeighbors = getUnvisitedNeighbors(node, grid);
   for (const neighbor of unvisitedNeighbors) {
     neighbor.distance = node.distance + 1;
     neighbor.previousNode = node;
   }
-}
+};
 
-function getUnvisitedNeighbors(node, grid) {
+//main function for unvisited nodesd
+const getUnvisitedNeighbors = (node, grid) => {
   const neighbors = [];
-  const {col, row} = node;
+  const { col, row } = node;
   if (row > 0) neighbors.push(grid[row - 1][col]);
   if (row < grid.length - 1) neighbors.push(grid[row + 1][col]);
   if (col > 0) neighbors.push(grid[row][col - 1]);
   if (col < grid[0].length - 1) neighbors.push(grid[row][col + 1]);
-  return neighbors.filter(neighbor => !neighbor.isVisited);
-}
+  return neighbors.filter((neighbor) => !neighbor.isVisited);
+};
 
-function getAllNodes(grid) {
+// init grid nodes
+const getAllNodes = (grid) => {
   const nodes = [];
   for (const row of grid) {
     for (const node of row) {
@@ -44,10 +50,10 @@ function getAllNodes(grid) {
     }
   }
   return nodes;
-}
+};
 
-
-export function getNodesInShortestPathOrder(finishNode) {
+// get nodes in shortest path
+export const getNodesInShortestPathOrder = (finishNode) => {
   const nodesInShortestPathOrder = [];
   let currentNode = finishNode;
   while (currentNode !== null) {
@@ -55,4 +61,4 @@ export function getNodesInShortestPathOrder(finishNode) {
     currentNode = currentNode.previousNode;
   }
   return nodesInShortestPathOrder;
-}
+};

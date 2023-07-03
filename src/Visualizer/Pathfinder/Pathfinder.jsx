@@ -5,6 +5,8 @@ import { NavBar } from "../NavBar/NavBar";
 import { dijkstra, getNodesInShortestPathOrder } from "../Algorithm/Dijkstra";
 
 export const Pathfinder = () => {
+
+  //set state for grid, start and finish, current row and column, and mouse press
   const [grid, setGrid] = useState([]);
   const [mouseIsPressed, setMouseIsPressed] = useState(false);
   const [run, setRun] = useState(false);
@@ -32,6 +34,8 @@ export const Pathfinder = () => {
     return grid;
   };
 
+  //create init nodes
+
   const createNode = (col, row) => {
     return {
       col,
@@ -44,6 +48,8 @@ export const Pathfinder = () => {
       previousNode: null,
     };
   };
+
+  // is wall or not
 
   const getNewGridWithWallToggled = (grid, row, col) => {
     const newGrid = grid.slice();
