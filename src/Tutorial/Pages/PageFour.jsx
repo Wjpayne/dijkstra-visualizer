@@ -56,7 +56,7 @@ export const PageFour = (props) => {
                 display: "flex",
                 justifyContent: "center",
                 position: "relative",
-                bottom: "-10%",
+                bottom: "-12.5%",
               }}
             >
               <Button

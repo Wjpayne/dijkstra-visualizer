@@ -20,11 +20,8 @@ function App() {
       <CssBaseline />
       <div className="App">
         <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: "120px",
+          style={{ display: "flex", justifyContent: "center", alignItems: "center" 
+          
           }}
         >
           {display ? (

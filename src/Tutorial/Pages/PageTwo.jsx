@@ -47,13 +47,14 @@ export const PageTwo = (props) => {
             </Typography>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <img alt = "Dijkstra's algorithm example" src={PageTwoImage}></img>
+              
             </div>
             <div
               style={{
                 display: "flex",
                 justifyContent: "center",
                 position: "relative",
-                bottom: "-4.75%",
+                
               }}
             >
               <Button

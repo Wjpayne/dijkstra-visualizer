@@ -49,7 +49,7 @@ export const PageOne = (props) => {
               display: "flex",
               justifyContent: "center",
               position: "relative",
-              bottom: "-73%",
+              bottom: "-77%",
             }}
           >
             <Button

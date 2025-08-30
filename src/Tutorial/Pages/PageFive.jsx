@@ -53,7 +53,9 @@ export const PageFive = (props) => {
                 display: "flex",
                 justifyContent: "center",
                 position: "relative",
-                bottom: "-11.25%",
+                bottom: "-3%"
+                
+                
               }}
             >
               <Button
