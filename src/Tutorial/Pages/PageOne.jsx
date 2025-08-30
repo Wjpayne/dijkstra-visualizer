@@ -3,7 +3,8 @@ import { Modal } from "@mui/base";
 import { Box, Button, Typography } from "@mui/material";
 import { ReactComponent as PageOneImage } from "../Images/PageOneImage.svg";
 export const PageOne = (props) => {
-  const { openOne, handleCloseOne, modalStyle, handleOpenTwo, setDisplay } = props;
+  const { openOne, handleCloseOne, modalStyle, handleOpenTwo, setDisplay } =
+    props;
 
   const next = () => {
     handleCloseOne();
@@ -11,9 +12,8 @@ export const PageOne = (props) => {
   };
 
   const skip = () => {
-    setDisplay(false)
-  }
-  
+    setDisplay(false);
+  };
 
   return (
     <div>
@@ -23,7 +23,7 @@ export const PageOne = (props) => {
         aria-labelledby="modal-pageOne"
         sx={{ backgroundColor: "white" }}
         disableScrollLock
-        hideBackdrop = {true}
+        hideBackdrop={true}
       >
         <Box sx={modalStyle}>
           <Typography
@@ -48,8 +48,11 @@ export const PageOne = (props) => {
             style={{
               display: "flex",
               justifyContent: "center",
-              position: "relative",
-              bottom: "-77%",
+              position: "absolute",
+              bottom: "0",
+              left: "0",
+              right: "0",
+              margin: "auto",
             }}
           >
             <Button
@@ -72,7 +75,7 @@ export const PageOne = (props) => {
                 "&:hover": { backgroundColor: "transparent" },
               }}
               size="large"
-              disableRipple 
+              disableRipple
               onClick={skip}
             >
               Skip Tutorial

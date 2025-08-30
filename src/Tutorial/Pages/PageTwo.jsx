@@ -53,7 +53,11 @@ export const PageTwo = (props) => {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                position: "relative",
+                position: "absolute",
+                bottom: "0",
+                left: "0",
+                right: "0",
+                margin: "auto"
                 
               }}
             >

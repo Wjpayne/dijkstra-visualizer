@@ -46,7 +46,7 @@ export const PageFour = (props) => {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                marginTop: "70px",
+                marginTop: "75px",
               }}
             >
               <img alt = "" style={{ width: "500px" }} src={PageFourImage}></img>
@@ -55,8 +55,11 @@ export const PageFour = (props) => {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                position: "relative",
-                bottom: "-12.5%",
+                position: "absolute",
+                bottom: "0",
+                left: "0",
+                right: "0",
+                margin: "auto"
               }}
             >
               <Button

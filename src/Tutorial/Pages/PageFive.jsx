@@ -52,8 +52,11 @@ export const PageFive = (props) => {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                position: "relative",
-                bottom: "-3%"
+                position: "absolute",
+                bottom: "0",
+                left: "0",
+                right: "0",
+                margin: "auto"
                 
                 
               }}
