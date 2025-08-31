@@ -5,7 +5,6 @@ import { NavBar } from "../NavBar/NavBar";
 import { dijkstra, getNodesInShortestPathOrder } from "../Algorithm/Dijkstra";
 
 export const Pathfinder = () => {
-
   //set state for grid, start and finish, current row and column, and mouse press
   const [grid, setGrid] = useState([]);
   const [mouseIsPressed, setMouseIsPressed] = useState(false);
@@ -71,34 +70,30 @@ export const Pathfinder = () => {
 
   //handler functions for mouse
 
-  const handleMouseDown = (row, col) => {
-    if (!run) {
-      if (
-        document.getElementById(`node-${row}-${col}`).className ===
-        "node node-start"
-      ) {
-        setMouseIsPressed(true);
-        setisStartNode(true);
-        setCurrCol(col);
-        setCurrRow(row);
-      } else if (
-        document.getElementById(`node-${row}-${col}`).className ===
-        "node node-finish"
-      ) {
-        setMouseIsPressed(true);
-        setisFinishNode(true);
-        setCurrCol(col);
-        setCurrRow(row);
-      } else {
-        const newGrid = getNewGridWithWallToggled(grid, row, col);
-        setGrid(newGrid);
-        setMouseIsPressed(true);
-        setIsWall(true);
-        setCurrCol(col);
-        setCurrRow(row);
-      }
-    }
-  };
+const handleMouseDown = (row, col) => {
+  if (run) return;
+
+  const node = grid[row][col];
+
+  if (node.isStart) {
+    setMouseIsPressed(true);
+    setisStartNode(true);
+    setCurrRow(row);
+    setCurrCol(col);
+  } else if (node.isFinish) {
+    setMouseIsPressed(true);
+    setisFinishNode(true);
+    setCurrRow(row);
+    setCurrCol(col);
+  } else {
+    const newGrid = getNewGridWithWallToggled(grid, row, col);
+    setGrid(newGrid);
+    setMouseIsPressed(true);
+    setIsWall(true);
+    setCurrRow(row);
+    setCurrCol(col);
+  }
+};
 
   const handleMouseUp = () => {
     setMouseIsPressed(false);
@@ -109,54 +104,38 @@ export const Pathfinder = () => {
     }
   };
 
-  const handleMouseEnter = (row, col) => {
-    if (mouseIsPressed) {
-      const nodeClassName = document.getElementById(
-        `node-${row}-${col}`
-      ).className;
-      if (isStartNode) {
-        if (
-          nodeClassName !== "node node-wall" &&
-          nodeClassName !== "node node-finish"
-        ) {
-          const prevStartNode = grid[currRow][currCol];
-          prevStartNode.isStart = false;
-          document.getElementById(`node-${currRow}-${currCol}`).className =
-            "node";
-          setCurrRow(row);
-          setCurrCol(col);
-          const currStartNode = grid[row][col];
-          currStartNode.isStart = true;
-          document.getElementById(`node-${row}-${col}`).className =
-            "node node-start";
-        }
-        setStartNodeCol(col);
-        setStartNodeRow(row);
-      } else if (isFinishNode) {
-        if (
-          nodeClassName !== "node node-wall" &&
-          nodeClassName !== "node node-start"
-        ) {
-          const prevFinishNode = grid[currRow][currCol];
-          prevFinishNode.isFinish = false;
-          document.getElementById(`node-${currRow}-${currCol}`).className =
-            "node";
-          setCurrCol(col);
-          setCurrRow(row);
+const handleMouseEnter = (row, col) => {
+  if (!mouseIsPressed) return;
 
-          const currFinishNode = grid[row][col];
-          currFinishNode.isFinish = true;
-          document.getElementById(`node-${row}-${col}`).className =
-            "node node-finish";
-        }
-        setFinishNodeCol(col);
-        setFinishNodeRow(row);
-      } else if (isWall) {
-        const newGrid = getNewGridWithWallToggled(grid, row, col);
-        setGrid(newGrid);
-      }
-    }
-  };
+  const node = grid[row][col];
+
+  if (isStartNode && !node.isWall && !node.isFinish) {
+    updateNodePosition("start", row, col);
+  } else if (isFinishNode && !node.isWall && !node.isStart) {
+    updateNodePosition("finish", row, col);
+  } else if (isWall && !node.isWall) {
+    const newGrid = getNewGridWithWallToggled(grid, row, col);
+    setGrid(newGrid);
+  }
+};
+
+const updateNodePosition = (type, row, col) => {
+  const newGrid = grid.map(r => r.map(n => ({ ...n })));
+
+  if (type === "start") {
+    newGrid[startNodeRow][startNodeCol].isStart = false;
+    newGrid[row][col].isStart = true;
+    setStartNodeRow(row);
+    setStartNodeCol(col);
+  } else if (type === "finish") {
+    newGrid[finishNodeRow][finishNodeCol].isFinish = false;
+    newGrid[row][col].isFinish = true;
+    setFinishNodeRow(row);
+    setFinishNodeCol(col);
+  }
+
+  setGrid(newGrid);
+};
 
   //animation
 
@@ -240,6 +219,7 @@ export const Pathfinder = () => {
         }
       }
     }
+
     const getGrid = getInitialGrid();
     setGrid(getGrid);
     setRun(false);
