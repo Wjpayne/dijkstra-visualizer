@@ -70,30 +70,30 @@ export const Pathfinder = () => {
 
   //handler functions for mouse
 
-const handleMouseDown = (row, col) => {
-  if (run) return;
+  const handleMouseDown = (row, col) => {
+    if (run) return;
 
-  const node = grid[row][col];
+    const node = grid[row][col];
 
-  if (node.isStart) {
-    setMouseIsPressed(true);
-    setisStartNode(true);
-    setCurrRow(row);
-    setCurrCol(col);
-  } else if (node.isFinish) {
-    setMouseIsPressed(true);
-    setisFinishNode(true);
-    setCurrRow(row);
-    setCurrCol(col);
-  } else {
-    const newGrid = getNewGridWithWallToggled(grid, row, col);
-    setGrid(newGrid);
-    setMouseIsPressed(true);
-    setIsWall(true);
-    setCurrRow(row);
-    setCurrCol(col);
-  }
-};
+    if (node.isStart) {
+      setMouseIsPressed(true);
+      setisStartNode(true);
+      setCurrRow(row);
+      setCurrCol(col);
+    } else if (node.isFinish) {
+      setMouseIsPressed(true);
+      setisFinishNode(true);
+      setCurrRow(row);
+      setCurrCol(col);
+    } else {
+      const newGrid = getNewGridWithWallToggled(grid, row, col);
+      setGrid(newGrid);
+      setMouseIsPressed(true);
+      setIsWall(true);
+      setCurrRow(row);
+      setCurrCol(col);
+    }
+  };
 
   const handleMouseUp = () => {
     setMouseIsPressed(false);
@@ -104,38 +104,41 @@ const handleMouseDown = (row, col) => {
     }
   };
 
-const handleMouseEnter = (row, col) => {
-  if (!mouseIsPressed) return;
+  const handleMouseEnter = (row, col) => {
+    if (!mouseIsPressed) return;
 
-  const node = grid[row][col];
+    const node = grid[row][col];
 
-  if (isStartNode && !node.isWall && !node.isFinish) {
-    updateNodePosition("start", row, col);
-  } else if (isFinishNode && !node.isWall && !node.isStart) {
-    updateNodePosition("finish", row, col);
-  } else if (isWall && !node.isWall) {
-    const newGrid = getNewGridWithWallToggled(grid, row, col);
+    if (isStartNode && !node.isWall && !node.isFinish) {
+      updateNodePosition("start", row, col);
+    } else if (isFinishNode && !node.isWall && !node.isStart) {
+      updateNodePosition("finish", row, col);
+    } else if (isWall && !node.isWall) {
+      const newGrid = getNewGridWithWallToggled(grid, row, col);
+      setGrid(newGrid);
+    } else if (isWall) {
+      const newGrid = getNewGridWithWallToggled(grid, row, col);
+      setGrid(newGrid);
+    }
+  };
+
+  const updateNodePosition = (type, row, col) => {
+    const newGrid = grid.map((r) => r.map((n) => ({ ...n })));
+
+    if (type === "start") {
+      newGrid[startNodeRow][startNodeCol].isStart = false;
+      newGrid[row][col].isStart = true;
+      setStartNodeRow(row);
+      setStartNodeCol(col);
+    } else if (type === "finish") {
+      newGrid[finishNodeRow][finishNodeCol].isFinish = false;
+      newGrid[row][col].isFinish = true;
+      setFinishNodeRow(row);
+      setFinishNodeCol(col);
+    }
+
     setGrid(newGrid);
-  }
-};
-
-const updateNodePosition = (type, row, col) => {
-  const newGrid = grid.map(r => r.map(n => ({ ...n })));
-
-  if (type === "start") {
-    newGrid[startNodeRow][startNodeCol].isStart = false;
-    newGrid[row][col].isStart = true;
-    setStartNodeRow(row);
-    setStartNodeCol(col);
-  } else if (type === "finish") {
-    newGrid[finishNodeRow][finishNodeCol].isFinish = false;
-    newGrid[row][col].isFinish = true;
-    setFinishNodeRow(row);
-    setFinishNodeCol(col);
-  }
-
-  setGrid(newGrid);
-};
+  };
 
   //animation
 
